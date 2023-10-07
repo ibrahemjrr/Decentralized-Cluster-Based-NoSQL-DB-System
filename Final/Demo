@@ -5,5 +5,5 @@ ENV username=ibrahem
 ENV password=ibrapass
 ENV create=true
 ENV application_port=8080
-COPY target/jars/Demo-0.0.1-SNAPSHOT.jar Demo.jar
+COPY Final/target/jars/Demo-0.0.1-SNAPSHOT.jar Demo.jar
 ENTRYPOINT ["java","-jar","Demo.jar"]
