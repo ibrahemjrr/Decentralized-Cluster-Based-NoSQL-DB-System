@@ -24,7 +24,7 @@ public class DockerService {
         this.dockerClient = DockerClientBuilder.getInstance(config).build();
     }
 
-    public String createAndStartContainer(CreateContainerRequest createContainerRequest) throws RuntimeException {
+    public void createAndStartContainer(CreateContainerRequest createContainerRequest) throws RuntimeException {
         System.out.println(createContainerRequest);
         ExposedPort exposedPort = ExposedPort.tcp(createContainerRequest.getPort());
         Ports portBindings = new Ports();
@@ -45,6 +45,5 @@ public class DockerService {
                 .exec();
 
         dockerClient.startContainerCmd(container.getId()).exec();
-        return container.getId();
     }
 }
